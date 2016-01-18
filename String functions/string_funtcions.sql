@@ -1,0 +1,10 @@
+﻿SELECT EMPLOYEE_ID,left(EMAIL,char_length(EMAIL)-3)
+ FROM employees;
+SELECT * 
+FROM locations 
+WHERE char_length(STREET_ADDRESS)=(SELECT MIN(char_length(STREET_ADDRESS))
+ FROM locations);
+SELECT FIRST_NAME,char_length(FIRST_NAME) as LENGTH_OF_FIRST_NAME
+ FROM employees 
+WHERE FIRST_NAME LIKE 'A%' or FIRST_NAME LIKE 'J°%' or FIRST_NAME LIKE 'M%'
+ ORDER BY FIRST_NAME;
